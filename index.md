@@ -7,7 +7,7 @@ hide: true
 
 My journey starts here.
 
-
+By Aditya Srivastava
 ### Markdown Samples [ [markdown cheatsheet] ](https://www.markdownguide.org/getting-started/)
 Using Markdown from index.md  We are learning markdown.
 
