@@ -5,6 +5,76 @@ description: Home Page
 hide: true
 ---
 
+# Metadata to describe animations in sprite file images/mario_animations.png
+- Rest:
+  row: 0
+  col: 0
+  frames: 15
+- RestL:
+  row: 1
+  col: 0
+  frames: 15
+- Walk:
+  row: 2
+  col: 0
+  frames: 8
+- Tada:
+  row: 2
+  col: 11
+  frames: 3
+- WalkL:
+  row: 3
+  col: 0
+  frames: 8
+- TadaL:
+  row: 3
+  col: 11
+  frames: 3
+- Run1:
+  row: 4
+  col: 0
+  frames: 15
+- Run1L:
+  row: 5
+  col: 0
+  frames: 15
+- Run2:
+  row: 6
+  col: 0
+  frames: 15
+- Run2L:
+  row: 7
+  col: 0
+  frames: 15
+- Puff:
+  row: 8
+  col: 0
+  frames: 15
+- PuffL:
+  row: 9
+  col: 0
+  frames: 15
+- Cheer:
+  row: 10
+  col: 0
+  frames: 15
+- CheerL:
+  row: 11
+  col: 0
+  frames: 15
+- Flip:
+  row: 12
+  col: 0
+  frames: 15
+- FlipL:
+  row: 13
+  col: 0
+  frames: 15
+
+  ![image](https://github.com/user-attachments/assets/a61e4cb2-3398-4310-8b58-ab266c9b660a)
+
+
+
 My journey starts here.
 
 By Aditya Srivastava
@@ -34,3 +104,4 @@ Using Markdown from index.md  We are learning markdown.
 ```
 
 ![image](https://github.com/user-attachments/assets/b19c0d20-23ed-4c17-bf03-6f63a6450b4f)
+
