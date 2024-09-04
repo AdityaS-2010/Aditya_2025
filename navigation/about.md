@@ -6,8 +6,6 @@ permalink: /about/
 
 Creator of Student 2025
 
-
-
 <style>
     /* Style looks pretty compact, trace grid-container and grid-item in the code */
     .grid-container {
