@@ -74,3 +74,21 @@ Creator of Student 2025
         container.appendChild(gridItem);
     }
 </script>
+
+### Journey through Life
+
+Here is what I did at those places
+
+- Born in La Jolla and lived there for 6 years
+- 🎓 Went to Mission Bay Montessori Academy till first grade, then went to Torrey Pines Elementary
+- Moved to 4s Ranch in November 2016
+- 🎓 Went to Stone Ranch Elementary since 1st Grade, then went to Oak Valley Middle School, Graduating Del Norte 2028
+
+
+### Culture, Family, and Fun
+
+Everything for me, as for many others, revolves around family and faith.
+
+- My mother told me that I was Danish, English. and Irish, here is my researched [family tree]({{site.baseurl}}/images/about/familytree.png)
+- My family is pretty big as I have been married twice, my 1st wife passed away.  We have had 5 kids, 4 adopted by me, 1 biological.  Plus, there are three grandkids.  My name to my grandkids is Abuilito.
+- The gallery of pics has some of my family, fun, culture and faith memories.
