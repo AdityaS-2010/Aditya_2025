@@ -40,8 +40,8 @@ Creator of Student 2025
     var living_in_the_world = [
         {"flag": "a/a0/Flag_of_India_%283-5%29.svg", "description": "My family is originated from India"},
         {"flag": "f/f3/Flag_of_Switzerland.svg", "description": "I went to vacation in Switzerland and loved it"},
-        {"flag": "b/be/Flag_of_England.svg", "greeting": "Alright mate", "description": "England - 2 years"},
-        {"flag": "e/ef/Flag_of_Hawaii.svg", "greeting": "Aloha", "description": "Hawaii - 2 years"},
+        {"flag": "0/01/Flag_of_California.svg", "description": "Born in San Diego California"},
+        {"flag": "a/a4/Flag_of_the_United_States.svg", "description": "Born and raised in the US"},
     ]; 
     
     // 3a. Consider how to update style count for size of container
