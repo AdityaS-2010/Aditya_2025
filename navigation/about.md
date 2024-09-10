@@ -87,8 +87,9 @@ Here is what I did at those places
 
 ### Culture, Family, and Fun
 
-Everything for me, as for many others, revolves around family and faith.
+Everything for me, as for many others, revolves around Family.
 
-- My mother told me that I was Danish, English. and Irish, here is my researched [family tree]({{site.baseurl}}/images/about/familytree.png)
-- My family is pretty big as I have been married twice, my 1st wife passed away.  We have had 5 kids, 4 adopted by me, 1 biological.  Plus, there are three grandkids.  My name to my grandkids is Abuilito.
-- The gallery of pics has some of my family, fun, culture and faith memories.
+- Both my parents were born in India, but my dad moved to Texas, and later my mom joined him. They later moved to San Diego where I was born.
+- My immediate family is pretty small, only consisting of my parents and me. I have 3 first cousins, one on my dad's side, and two on my mom's side.
+- For fun, I like to play sports and excercise. I play soccer competetively and I also play basketball sometimes. For excercise I like to go on runs, and workout at home.
+
