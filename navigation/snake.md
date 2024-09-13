@@ -1,8 +1,14 @@
 ---
-layout: page
-title: Snake
-permalink: /snake/ 
+layout: post
+title: Snake Game
+description: A Javascript Snake game that contains score and preferences.
+categories: [Javascript]
+menu: nav/javascript_project.html
+permalink: /javascript/project/snake
+toc: true
+comments: false
 ---
+
 
 <style>
 
