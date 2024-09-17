@@ -222,9 +222,10 @@ Using Markdown from index.md  We are learning markdown.
 
 ![image](https://github.com/user-attachments/assets/b19c0d20-23ed-4c17-bf03-6f63a6450b4f)
 
+
 <!-- from https://github.com/utterance/utterances -->
 <script src="https://utteranc.es/client.js"
-        repo="{{ site.github_username }}/{{ site.github_repo | default: site.baseurl | remove: "/" }}"
+        repo="AdityaS-2010/Aditya_2025"
         issue-term="title"
         label="blogpost-comment"
         theme="github-light"
