@@ -93,3 +93,8 @@ Everything for me, as for many others, revolves around Family.
 - My immediate family is pretty small, only consisting of my parents and me. I have 3 first cousins, one on my dad's side, and two on my mom's side.
 - For fun, I like to play sports and excercise. I play soccer competetively and I also play basketball sometimes. For excercise I like to go on runs, and workout at home.
 
+
+<a href="https://adityas-2010.github.io/Aditya_2025/"
+style="display: inline-block; padding: 10px 20px; font-size: 16px; color: white; background-color: #007BFF; text-align: center; text-decoration: none; border-radius: 5px; transition: background-color 0.3s;">
+Go to Home Page
+</a>
