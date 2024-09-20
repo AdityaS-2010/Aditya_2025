@@ -11,3 +11,13 @@ image: /images/Fortnite Image
 
 ### Why They Interest Me
 These games interest me beccause of how unique they are. Fortnite was the first shooter game to implement building into the game. Rocket League interests me because of the concept and graphics behind it. My two favorite things are cars and soccer, so a game like Rocket League is very intriguing to me. Both games have unique graphics and are very complex.
+
+
+<script src="https://utteranc.es/client.js"
+        repo="AdityaS-2010/Aditya_2025"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
