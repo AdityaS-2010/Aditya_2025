@@ -18,7 +18,7 @@ permalink: /snake/
         display: none;
         border-style: solid;
         border-width: 10px;
-        border-color: #FFFFFF;
+        border-color: #FF0000;
     }
     canvas:focus{
         outline: none;
