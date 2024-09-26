@@ -18,7 +18,7 @@ permalink: /snake/
         display: none;
         border-style: solid;
         border-width: 10px;
-        border-color: #FF0000;
+        border-color: #00FF89;
     }
     canvas:focus{
         outline: none;
@@ -64,8 +64,8 @@ permalink: /snake/
     }
 
     #setting input:checked + label{
-        background-color: #FF0000;
-        color: #FF0000;
+        background-color: #00FF89;
+        color: #00FF89;
     }
 </style>
 
@@ -83,7 +83,7 @@ permalink: /snake/
         </div>
         <!-- Game Over -->
         <div id="gameover" class="py-4 text-light">
-            <p>Game Over, press <span style="background-color: #FFFFFF; color: #000000">space</span> to try again</p>
+            <p>Game Over, press <span style="background-color: #00FF89; color: #000000">space</span> to try again</p>
             <a id="new_game1" class="link-alert">new game</a>
             <a id="setting_menu1" class="link-alert">settings</a>
         </div>
@@ -91,7 +91,7 @@ permalink: /snake/
         <canvas id="snake" class="wrap" width="320" height="320" tabindex="1"></canvas>
         <!-- Settings Screen -->
         <div id="setting" class="py-4 text-light">
-            <p>Settings Screen, press <span style="background-color: #FFFFFF; color: #000000">space</span> to go back to playing</p>
+            <p>Settings Screen, press <span style="background-color: #00FF89; color: #000000">space</span> to go back to playing</p>
             <a id="new_game2" class="link-alert">new game</a>
             <br>
             <p>Speed:
@@ -329,7 +329,7 @@ permalink: /snake/
         /* Dot for Food or Snake part */
         /////////////////////////////////////////////////////////////
         let activeDot = function(x, y){
-            ctx.fillStyle = "#FFFFFF";
+            ctx.fillStyle = "#000000";
             ctx.fillRect(x * BLOCK, y * BLOCK, BLOCK, BLOCK);
         }
         /* Random food placement */
