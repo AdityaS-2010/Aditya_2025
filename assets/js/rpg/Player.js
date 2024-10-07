@@ -1,9 +1,9 @@
 import GameEnv from './GameEnv.js';
 
 // Define non-mutable constants as defaults
-const SCALE_FACTOR = 25; // 1/nth of the height of the canvas
-const STEP_FACTOR = 100; // 1/nth, or N steps up and across the canvas
-const ANIMATION_RATE = 1; // 1/nth of the frame rate
+const SCALE_FACTOR = 10; // 1/nth of the height of the canvas
+const STEP_FACTOR = 1000; // 1/nth, or N steps up and across the canvas
+const ANIMATION_RATE = 50; // 1/nth of the frame rate
 
 /**
  * Player is a dynamic class that manages the data and events for a player object.
@@ -75,8 +75,11 @@ class Player {
         // Set the initial size of the player
         this.size = GameEnv.innerHeight / this.scaleFactor;
 
-        // Initialize the player's position and velocity
-        this.position = { x: 0, y: GameEnv.innerHeight - this.size };
+        // Initialize the player's position in the middle of the canvas
+        this.position = { 
+            x: (GameEnv.innerWidth - this.size) / 2, // Center horizontally
+            y: (GameEnv.innerHeight - this.size) / 2 // Center vertically
+        };
         this.velocity = { x: 0, y: 0 };
 
         // Set the initial size and velocity of the player
