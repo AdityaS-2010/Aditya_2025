@@ -24,34 +24,20 @@ permalink: /rpg/
         ANIMATION_RATE: 50,
         pixels: {height: 280, width: 256},
         orientation: {rows: 4, columns: 3 },
-        down: {row: 0, start: 0, columns: 3 },
-        left: {row: 1, start: 0, columns: 3 },
-        right: {row: 2, start: 0, columns: 3 },
-        up: {row: 3, start: 0, columns: 3 },
-    };
+        up: { start: 0, row: 0, columns: 3 },     // Row 3, 3 frames for "up" animation
+        down: { start: 0, row: 2, columns: 3 },  // Row 0, 3 frames for "down" animation
+        left: { start: 0, row: 3, columns: 3 },  // Row 1, 3 frames for "left" animation
+        right: { start: 0, row: 1, columns: 3 } // Row 2, 3 frames for "right" animation
+
+    }; 
+    
     const sprite = {src: sprite_src, data: sprite_data};
-
-     const sprite_src_fish = "{{site.baseurl}}/images/rpg/fishies.png";
-    const sprite_data_fish = {
-        SCALE_FACTOR: 16,  // Adjust this based on your scaling needs
-        STEP_FACTOR: 400,
-        ANIMATION_RATE: 50,
-        pixels: {height: 256, width: 384},
-        orientation: {rows: 8, columns: 12 },
-        down: {row: 0, start: 0, columns: 3 },  // 1st row
-        left: {row: 1, start: 0, columns: 3 },  // 2nd row
-        right: {row: 2, start: 0, columns: 3 }, // 3rd row
-        up: {row: 3, start: 0, columns: 3 },    // 4th row
-    };
-
-    const fish = {src: sprite_src_fish, data: sprite_data_fish};
 
     // Assets for game
     //const assets = {}
     //const assets = {image: image}
     //const assets = {sprite: sprite}
-    const assets = {image: image, sprite: sprite, fish: fish}
+    const assets = {image: image, sprite: sprite}
 
     // Start game engine
     GameControl.start(assets);
-</script>
