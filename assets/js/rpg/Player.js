@@ -261,20 +261,4 @@ class Player {
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 
-// Create a new Image object
-const npcImage = new Image();
-
-// Set the source of the image
-npcImage.src = 'images/rpg/warrior.png';
-
-// When the image loads, draw it on the canvas
-npcImage.onload = function() {
-    // Draw the NPC at position (x, y) with specified width and height
-    const x = 100; // X-coordinate
-    const y = 150; // Y-coordinate
-    const width = 64; // Width of the image
-    const height = 64; // Height of the image
-    ctx.drawImage(npcImage, x, y, width, height);
-};
-
 export default Player;
