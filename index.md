@@ -219,8 +219,17 @@ Using Markdown from index.md  We are learning markdown.
 - Focus on tehnical communications through project presentations and student led teaching
 - Grades are on projects, learnt concepts, and live reviews between student(s) and teacher
 ```
+### Game Progress
 
-![image](https://github.com/user-attachments/assets/b19c0d20-23ed-4c17-bf03-6f63a6450b4f)
+> Here is my progress through game coding, click to see these online
+
+<div style="display: flex; flex-wrap: wrap; gap: 10px;">
+    <a href="{{site.baseurl}}/snake" style="text-decoration: none;">
+        <div style="background-color: #00FF00; color: black; padding: 10px 20px; border-radius: 5px; font-weight: bold;">
+            Snake Game
+        </div>
+
+  ![image](https://github.com/user-attachments/assets/b19c0d20-23ed-4c17-bf03-6f63a6450b4f)
 
 
 <!-- from https://github.com/utterance/utterances -->
