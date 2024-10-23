@@ -223,18 +223,94 @@ Using Markdown from index.md  We are learning markdown.
 
 > Here is my progress through game coding, click to see these online
 
-<div style="display: flex; flex-wrap: wrap; gap: 10px;">
-    <a href="{{site.baseurl}}/snake" style="text-decoration: none;">
-        <div style="background-color: #00FF00; color: black; padding: 10px 20px; border-radius: 5px; font-weight: bold;">
+<div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; padding: 30px;">
+    <a href="https://adityas-2010.github.io/Aditya_2025/snake/" style="text-decoration: none;">
+        <div style="background: linear-gradient(135deg, #6D5BFF, #8D75FF, #A557FF); color: white; padding: 20px 40px; border-radius: 12px; font-weight: bold; box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.4); transition: all 0.3s ease;">
             Snake Game
         </div>
+    </a>
+    <a href="https://adityas-2010.github.io/Aditya_2025/rpg/" style="text-decoration: none;">
+        <div style="background: linear-gradient(135deg, #FF416C, #FF738D, #FF7373); color: white; padding: 20px 40px; border-radius: 12px; font-weight: bold; box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.4); transition: all 0.3s ease;">
+            Zombie v0.0
+        </div>
+    </a>
+    <a href="https://aaryavlal.github.io/Aaryav_2025/rpg/" style="text-decoration: none;">
+        <div style="background: linear-gradient(135deg, #FF8C00, #FFA500, #FFC061); color: white; padding: 20px 40px; border-radius: 12px; font-weight: bold; box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.4); transition: all 0.3s ease;">
+            Zombie v0.1
+        </div>
+    </a>
+    <a href="https://adityas-2010.github.io/Aditya_2025/rpg0x/" style="text-decoration: none;">
+        <div style="background: linear-gradient(135deg, #00D084, #00E599, #7EFFC1); color: white; padding: 20px 40px; border-radius: 12px; font-weight: bold; box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.4); transition: all 0.3s ease;">
+            Zombie v0.2
+        </div>
+    </a>
+</div>
 
-<!-- from https://github.com/utterance/utterances -->
-<script src="https://utteranc.es/client.js"
-        repo="AdityaS-2010/Aditya_2025"
-        issue-term="title"
-        label="blogpost-comment"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script>
+<style>
+    a div:hover {
+        transform: translateY(-8px) scale(1.05);
+        box-shadow: 0px 16px 30px rgba(0, 0, 0, 0.5);
+        filter: brightness(1.1);
+    }
+</style>
+
+<br>
+
+### Juypter Notebooks
+
+> Here is my preparation for sprint 2, click to review all notebooks
+
+<div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; padding: 30px;">
+    <a href="https://github.com/AdityaS-2010/Aditya_2025/blob/main/_notebooks/Foundation/Sprint2/2024-09-30-variables_IO.ipynb" style="text-decoration: none;">
+        <div style="background: linear-gradient(135deg, #434343, #6B6B6B, #A9A9A9); color: white; padding: 20px 40px; border-radius: 10px; font-weight: bold; box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.4); transition: all 0.3s ease;">
+            Variables I/O
+        </div>
+    </a>
+    <a href="https://github.com/AdityaS-2010/Aditya_2025/blob/main/_notebooks/Foundation/Sprint2/2024-09-30-data-types-operations.ipynb" style="text-decoration: none;">
+        <div style="background: linear-gradient(135deg, #FF416C, #FF6275, #FF7373); color: white; padding: 20px 40px; border-radius: 10px; font-weight: bold; box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.4); transition: all 0.3s ease;">
+            Data Types
+        </div>
+    </a>
+    <a href="https://github.com/AdityaS-2010/Aditya_2025/issues/9" style="text-decoration: none;">
+        <div style="background: linear-gradient(135deg, #434343, #6B6B6B, #A9A9A9); color: white; padding: 20px 40px; border-radius: 10px; font-weight: bold; box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.4); transition: all 0.3s ease;">
+            Sprint 2 Hacks
+        </div>
+    </a>
+</div>
+
+<style>
+    a div:hover {
+        transform: translateY(-8px) scale(1.05);
+        box-shadow: 0px 16px 30px rgba(0, 0, 0, 0.5);
+        filter: brightness(1.1);
+    }
+</style>
+
+<div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; padding: 30px;">
+    <a href="https://github.com/AdityaS-2010/Aditya_2025/blob/main/_notebooks/Foundation/Sprint2/2024-09-30-for_sprites.ipynb" style="text-decoration: none;">
+        <div style="background: linear-gradient(135deg, #6D5BFF, #A557FF, #D9A8FF); color: white; padding: 20px 40px; border-radius: 12px; font-weight: bold; box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.4); transition: all 0.3s ease;">
+            Sprite Hacks 
+        </div>
+    </a>
+</div>
+
+<style>
+    a div:hover {
+        transform: translateY(-8px) scale(1.05);
+        box-shadow: 0px 16px 30px rgba(0, 0, 0, 0.5);
+        filter: brightness(1.1);
+    }
+</style>
+
+
+
+  
+</div>
+
+<style>
+    a div:hover {
+        transform: translateY(-8px) scale(1.05);
+        box-shadow: 0px 16px 30px rgba(0, 0, 0, 0.5);
+        filter: brightness(1.1);
+    }
+</style>
