@@ -292,8 +292,26 @@ Using Markdown from index.md  We are learning markdown.
             Sprite Hacks 
         </div>
     </a>
-</div>
 
+### Homeworks
+
+> Here are my Homeworks from each lesson. Click to view each notebook
+
+<div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; padding: 30px;">
+    <a href="https://github.com/AdityaS-2010/Aditya_2025/blob/main/_notebooks/Foundation/Variables/2024-10-28-variables_hw.ipynb" style="text-decoration: none;">
+        <div style="background: linear-gradient(135deg, #434343, #6B6B6B, #A9A9A9); color: white; padding: 20px 40px; border-radius: 10px; font-weight: bold; box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.4); transition: all 0.3s ease;">
+            Variables
+        </div>
+    </a>
+    <a href="https://github.com/AdityaS-2010/Aditya_2025/blob/main/_notebooks/Foundation/Conditions/2024-11-10-conditinals_hacks.ipynb" style="text-decoration: none;">
+        <div style="background: linear-gradient(135deg, #FF416C, #FF6275, #FF7373); color: white; padding: 20px 40px; border-radius: 10px; font-weight: bold; box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.4); transition: all 0.3s ease;">
+            Conditions
+        </div>
+   <a href="https://github.com/AdityaS-2010/Aditya_2025/blob/main/_notebooks/Foundation/Nested_Conditionals/nested_conditionalshw.ipynb">
+        <div style="background: linear-gradient(135deg, #434343, #6B6B6B, #A9A9A9); color: white; padding: 20px 40px; border-radius: 10px; font-weight: bold; box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.4); transition: all 0.3s ease;">
+            Nested Conditionals
+        </div>
+    </a>
 <style>
     a div:hover {
         transform: translateY(-8px) scale(1.05);
