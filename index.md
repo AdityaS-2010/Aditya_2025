@@ -323,12 +323,4 @@ Using Markdown from index.md  We are learning markdown.
 
 
   
-</div>
 
-<style>
-    a div:hover {
-        transform: translateY(-8px) scale(1.05);
-        box-shadow: 0px 16px 30px rgba(0, 0, 0, 0.5);
-        filter: brightness(1.1);
-    }
-</style>
