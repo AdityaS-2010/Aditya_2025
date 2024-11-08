@@ -306,6 +306,12 @@ Using Markdown from index.md  We are learning markdown.
             Nested Conditionals Homework
         </div>
     </a>
+    <a href="https://github.com/AdityaS-2010/Aditya_2025/blob/main/_notebooks/Foundation/Classes_and_Methods/2024-11-04-classes-hw.ipynb" style="text-decoration: none;">
+    <div style="background: linear-gradient(135deg, #32CD32, #66FF66, #98FB98); color: white; padding: 20px 40px; border-radius: 10px; font-weight: bold; box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.4); transition: all 0.3s ease;">
+        Classes and Methods Homework
+    </div>
+</a>
+
 </div>
 
 <style>
