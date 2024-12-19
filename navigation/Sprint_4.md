@@ -3,18 +3,6 @@ layout: Sprint_4
 title: Sprint_4
 permalink: /Sprint_4/
 ---
-<style>
-  body {
-    background-color: black;
-    color: white;
-  }
-  h1, h2, h3, h4 {
-    color: #00FFFF; /* Cyan for the titles */
-  }
-  a {
-    color: #FFD700; /* Gold for links */
-  }
-</style>
 
 # Game Level Changed:
 
