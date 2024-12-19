@@ -1,5 +1,5 @@
 ---
-layout: Sprint_4 
+layout: post 
 title: Sprint_4
 permalink: /Sprint_4/
 ---
