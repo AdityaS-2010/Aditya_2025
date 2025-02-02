@@ -6,7 +6,7 @@ import Player from './Player.js';
 class GameLevelJungle {
     constructor(path) {
         // Values dependent on GameEnv.create()
-        
+        let width = GameEnv.innerWidth;
         let height = GameEnv.innerHeight;
 
         // Background data
