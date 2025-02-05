@@ -40,19 +40,12 @@ class GameLevelJungle {
             keypress: { up: 87, left: 65, down: 83, right: 68 } // W, A, S, D
         };
         
-        const tree_data = {
-            id: 'Tree',
-            src: path + "/images/gamify/tree.png",
-            pixels: { width: 100, height: 150 },
-            position: { x: 200, y: 300 },
-            interactable: true,
-            interactionKey: 'E'
-        };
+     
         // List of objects definitions for this level
         this.objects = [
             { class: Background, data: image_data_jungle },
             { class: Player, data: sprite_data_lumberjack },
-            { class: Tree, data: tree_data }
+            
             // Add NPCs here if needed
         ];
     }
