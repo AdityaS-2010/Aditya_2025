@@ -2,15 +2,12 @@ import GameEnv from './GameEnv.js';
 import Background from './Background.js';
 import Player from './Player.js';
 
-
 class GameLevelJungle {
     constructor(path) {
-        // Values dependent on GameEnv.create()
         let width = GameEnv.innerWidth;
         let height = GameEnv.innerHeight;
 
-        // Background data
-        const image_src_jungle = path + "/images/gamify/Jungle.jpg"; // be sure to include the path
+        const image_src_jungle = path + "/images/gamify/Jungle.jpg";
         const image_data_jungle = {
             name: 'Jungle',
             greeting: "Welcome to the Jungle! There are many wonderful animals to meet here, but be careful!",
@@ -18,8 +15,7 @@ class GameLevelJungle {
             pixels: { height: 700, width: 400 }
         };
 
-        // Player data for Lumberjack
-        const sprite_src_lumberjack = path + "/images/gamify/lumberjack.png"; // be sure to include the path
+        const sprite_src_lumberjack = path + "/images/gamify/lumberjack.png";
         const LUMBERJACK_SCALE_FACTOR = 3;
         const sprite_data_lumberjack = {
             id: 'Lumberjack',
@@ -33,20 +29,16 @@ class GameLevelJungle {
             orientation: { rows: 6, columns: 6 },
             idle: { row: 0, start: 0, columns: 4 },
             down: { row: 0, start: 0, columns: 3 },
-            left: { row: 2 , start: 0, columns: 6 },
+            left: { row: 2, start: 0, columns: 6 },
             right: { row: 2, start: 0, columns: 6 },
             up: { row: 4, start: 0, columns: 6 },
             hitbox: { widthPercentage: 0.45, heightPercentage: 0.2 },
             keypress: { up: 87, left: 65, down: 83, right: 68 } // W, A, S, D
         };
-        
-     
-        // List of objects definitions for this level
+
         this.objects = [
             { class: Background, data: image_data_jungle },
-            { class: Player, data: sprite_data_lumberjack },
-            
-            // Add NPCs here if needed
+            { class: Player, data: sprite_data_lumberjack }
         ];
     }
 }

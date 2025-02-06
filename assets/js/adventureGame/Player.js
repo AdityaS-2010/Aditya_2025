@@ -25,22 +25,16 @@ class Player extends Character {
     constructor(data = null) {
         super(data);
         this.keypress = data?.keypress || {up: 87, left: 65, down: 83, right: 68};
-        this.bindEventListeners();
-    }
+        this.velocity = { x: 0, y: 0 };
+        this.keysPressed = {}; // Initialize keysPressed
 
-
-    /**
-     * Binds key event listeners to handle object movement.
-     * 
-     * This method binds keydown and keyup event listeners to handle object movement.
-     * The .bind(this) method ensures that 'this' refers to the object object.
-     */
-    bindEventListeners() {
-        addEventListener('keydown', this.handleKeyDown.bind(this));
-        addEventListener('keyup', this.handleKeyUp.bind(this));
+        // Add event listeners for keydown and keyup
+        window.addEventListener('keydown', this.handleKeyDown.bind(this));
+        window.addEventListener('keyup', this.handleKeyUp.bind(this));
     }
 
     handleKeyDown({ keyCode }) {
+        this.keysPressed[keyCode] = true; // Track key press state
         switch (keyCode) {
             case this.keypress.up:
                 this.velocity.y -= this.yVelocity;
@@ -69,6 +63,7 @@ class Player extends Character {
      * @param {Object} event - The keyup event object.
      */
     handleKeyUp({ keyCode }) {
+        this.keysPressed[keyCode] = false; // Track key release state
         switch (keyCode) {
             case this.keypress.up:
                 this.velocity.y = 0;
@@ -83,8 +78,49 @@ class Player extends Character {
                 this.velocity.x = 0;
                 break;
         }
+
+        // Check if any keys are still pressed
+        this.idle();
     }
 
+    idle() {
+        // Check if any keys are pressed
+        const keys = Object.values(this.keysPressed);
+        if (!keys.includes(true)) {
+            this.direction = 'idle';
+        }
+    }
+
+    update() {
+        // Update begins by drawing the object
+        this.draw();
+
+        // Update or change position according to velocity events
+        this.position.x += this.velocity.x;
+        this.position.y += this.velocity.y;
+
+        // Ensure the object stays within the canvas boundaries
+        // Bottom of the canvas
+        if (this.position.y + this.height > GameEnv.innerHeight) {
+            this.position.y = GameEnv.innerHeight - this.height;
+            this.velocity.y = 0;
+        }
+        // Top of the canvas
+        if (this.position.y < 0) {
+            this.position.y = 0;
+            this.velocity.y = 0;
+        }
+        // Right of the canvas
+        if (this.position.x + this.width > GameEnv.innerWidth) {
+            this.position.x = GameEnv.innerWidth - this.width;
+            this.velocity.x = 0;
+        }
+        // Left of the canvas
+        if (this.position.x < 0) {
+            this.position.x = 0;
+            this.velocity.x = 0;
+        }
+    }
 }
 
 export default Player;

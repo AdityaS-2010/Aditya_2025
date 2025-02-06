@@ -4,6 +4,7 @@ import Background from './Background.js';
 import Player from './Player.js';
 import Npc from './Npc.js';
 
+
 class GameLevelDesert {
   constructor(path) {
     const header = document.querySelector('header');
