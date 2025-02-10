@@ -41,6 +41,7 @@ class GameLevelDesert {
         left: {row: 2, start: 0, columns: 3 },
         right: {row: 1, start: 0, columns: 3 },
         up: {row: 3, start: 0, columns: 3 },
+        idle : {row: 0, start: 0, columns: 3 },
         hitbox: { widthPercentage: 0.45, heightPercentage: 0.2 },
         keypress: { up: 87, left: 65, down: 83, right: 68 } // W, A, S, D
     };
@@ -57,7 +58,8 @@ class GameLevelDesert {
         pixels: {height: 256, width: 352},
         INIT_POSITION: { x: (width / 2), y: (height / 2)},
         orientation: {rows: 8, columns: 11 },
-        down: {row: 5, start: 0, columns: 3 },  // This is the stationary npc, down is default 
+        down: {row: 5, start: 0, columns: 3 }, // This is the stationary npc, down is default 
+        idle: {row: 5, start: 0, columns: 3 },
         hitbox: { widthPercentage: 0.1, heightPercentage: 0.2 },
         // Linux command quiz
         quiz: { 

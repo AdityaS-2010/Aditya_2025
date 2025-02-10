@@ -37,6 +37,7 @@ class GameLevelWater {
         left: {row: 1, start: 0, columns: 2 },
         right: {row: 1, start: 0, columns: 2 },
         up: {row: 0, start: 0, columns: 2},
+        idle: {row: 0, start: 0, columns: 2},
         hitbox: { widthPercentage: 0.45, heightPercentage: 0.2 },
         keypress: { up: 87, left: 65, down: 83, right: 68 } // W, A, S, D
     };

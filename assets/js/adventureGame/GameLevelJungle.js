@@ -55,7 +55,13 @@ class GameLevelJungle {
             right: { row: 2, start: 0, columns: 6 },
             up: { row: 4, start: 0, columns: 6 },
             hitbox: { widthPercentage: 0.45, heightPercentage: 0.2 },
-            keypress: { up: 87, left: 65, down: 83, right: 68 } // W, A, S, D
+            keypress: { up: 87, left: 65, down: 83, right: 68 }, // W, A, S, D
+            quiz: {
+                title: "What should I do?",
+                questions: [
+                    "Should I chop this tree?\n1. Yes\n2. No",
+                ]
+            }
         };
 
         this.objects = [
