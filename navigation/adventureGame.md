@@ -166,7 +166,7 @@ permalink: /gamify/adventureGame
     // Function to track NPC interactions
     function trackNpcInteraction() {
         // List of possible NPCs to track (in order)
-        const possibleNpcs = ["Tux", "Octocat", "Linux Robot"];
+        const possibleNpcs = ["Tux", "Octocat", "Linux Robot, Lumberjack"];
 
         // If the player hasn't interacted yet, add the next NPC in order
         if (npcTracker.length < possibleNpcs.length) {

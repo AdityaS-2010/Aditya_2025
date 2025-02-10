@@ -1,6 +1,7 @@
 import GameEnv from './GameEnv.js';
 import Background from './Background.js';
 import Player from './Player.js';
+import Npc from './Npc.js';
 
 class GameLevelJungle {
     constructor(path) {
@@ -36,12 +37,37 @@ class GameLevelJungle {
             keypress: { up: 87, left: 65, down: 83, right: 68 } // W, A, S, D
         };
 
+        const sprite_src_lumberjack = path + "/images/gamify/lumberjack.png";
+        const LUMBERJACK_SCALE_FACTOR = 3;
+        const sprite_data_lumberjack = {
+            id: 'Lumberjack',
+            greeting: "Hi I am Lumberjack, I love chopping wood and exploring the jungle!",
+            src: sprite_src_lumberjack,
+            SCALE_FACTOR: LUMBERJACK_SCALE_FACTOR,
+            STEP_FACTOR: 1000,
+            ANIMATION_RATE: 50,
+            INIT_POSITION: { x: width - (width / 4), y: height - (height / LUMBERJACK_SCALE_FACTOR) },
+            pixels: { height: 348, width: 348 },
+            orientation: { rows: 6, columns: 6 },
+            idle: { row: 0, start: 0, columns: 4 },
+            down: { row: 0, start: 0, columns: 3 },
+            left: { row: 2, start: 0, columns: 6 },
+            right: { row: 2, start: 0, columns: 6 },
+            up: { row: 4, start: 0, columns: 6 },
+            hitbox: { widthPercentage: 0.45, heightPercentage: 0.2 },
+            keypress: { up: 87, left: 65, down: 83, right: 68 } // W, A, S, D
+        };
 
         this.objects = [
             { class: Background, data: image_data_jungle },
             { class: Player, data: sprite_data_chungy },
+            { class: Npc, data: sprite_data_lumberjack }
         ];
     }
 }
 
 export default GameLevelJungle;
+
+
+
+
