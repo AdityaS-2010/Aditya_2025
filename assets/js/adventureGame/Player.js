@@ -27,6 +27,8 @@ class Player extends Character {
         this.keypress = data?.keypress || {up: 87, left: 65, down: 83, right: 68};
         this.velocity = { x: 0, y: 0 };
         this.keysPressed = {}; // Initialize keysPressed
+        this.idleFrameIndex = 0; // Initialize idle frame index
+        this.idleFrameCounter = 0; // Initialize idle frame counter
 
         // Add event listeners for keydown and keyup
         window.addEventListener('keydown', this.handleKeyDown.bind(this));
@@ -78,22 +80,71 @@ class Player extends Character {
                 this.velocity.x = 0;
                 break;
         }
-
-        // Check if any keys are still pressed
-        this.idle();
     }
 
-    idle() {
-        // Check if any keys are pressed
-        const keys = Object.values(this.keysPressed);
-        if (!keys.includes(true)) {
-            this.direction = 'idle';
+    /**
+     * Draws the object on the canvas.
+     * 
+     * This method renders the object using the sprite sheet if provided, otherwise a red square.
+     */
+    draw() {
+        if (this.spriteSheet) {
+            // Sprite Sheet frame size: pixels = total pixels / total frames
+            const frameWidth = this.spriteData.pixels.width / this.spriteData.orientation.columns;
+            const frameHeight = this.spriteData.pixels.height / this.spriteData.orientation.rows;
+    
+            // Sprite Sheet direction data source (e.g., front, left, right, back)
+            const directionData = this.spriteData[this.direction];
+    
+            // Sprite Sheet x and y declarations to store coordinates of current frame
+            let frameX, frameY;
+            // Sprite Sheet x and y current frame: coordinate = (index) * (pixels)
+            frameX = (directionData.start + this.frameIndex) * frameWidth;
+            frameY = directionData.row * frameHeight;
+    
+            // Set up the canvas dimensions and styles
+            this.canvas.width = frameWidth;
+            this.canvas.height = frameHeight;
+            this.canvas.style.width = `${this.width}px`;
+            this.canvas.style.height = `${this.height}px`;
+            this.canvas.style.position = 'absolute';
+            this.canvas.style.left = `${this.position.x}px`;
+            this.canvas.style.top = `${GameEnv.top + this.position.y}px`;
+    
+            // Clear the canvas before drawing
+            this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    
+            // Draw the current frame of the sprite sheet
+            this.ctx.drawImage(
+                this.spriteSheet,
+                frameX, frameY, frameWidth, frameHeight, // Source rectangle
+                0, 0, this.canvas.width, this.canvas.height // Destination rectangle
+            );
+    
+            // Update the frame index for animation at a slower rate
+            this.frameCounter++;
+            if (this.frameCounter % this.animationRate === 0) {
+                this.frameIndex = (this.frameIndex + 1) % directionData.columns;
+            }
+        } else {
+            // Draw default red square
+            this.ctx.fillStyle = 'red';
+            this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
         }
     }
 
+    /**
+     * Updates the object's position and ensures it stays within the canvas boundaries.
+     * 
+     * This method updates the object's position based on its velocity and ensures that the object
+     * stays within the boundaries of the canvas.
+     */
     update() {
         // Update begins by drawing the object
         this.draw();
+
+        // Perform collision checks
+        this.collisionChecks();
 
         // Update or change position according to velocity events
         this.position.x += this.velocity.x;
@@ -120,6 +171,36 @@ class Player extends Character {
             this.position.x = 0;
             this.velocity.x = 0;
         }
+
+        // Handle idle animation when no keys are pressed
+        if (!this.keysPressed[this.keypress.up] && !this.keysPressed[this.keypress.left] &&
+            !this.keysPressed[this.keypress.down] && !this.keysPressed[this.keypress.right]) {
+            this.handleIdleAnimation();
+        }
+    }
+
+    /**
+     * Handles the idle animation when no keys are pressed.
+     */
+    handleIdleAnimation() {
+        // Update the idle frame index for animation at a slower rate
+        this.idleFrameCounter++;
+        if (this.idleFrameCounter % (this.animationRate * 1) === 0) { // Adjust the rate as needed
+            this.idleFrameIndex = (this.idleFrameIndex + 1) % this.spriteData.idle.columns;
+        }
+
+        // Draw the idle frame
+        const frameWidth = this.spriteData.pixels.width / this.spriteData.orientation.columns;
+        const frameHeight = this.spriteData.pixels.height / this.spriteData.orientation.rows;
+        const frameX = this.idleFrameIndex * frameWidth;
+        const frameY = this.spriteData.idle.row * frameHeight;
+
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+        this.ctx.drawImage(
+            this.spriteSheet,
+            frameX, frameY, frameWidth, frameHeight, // Source rectangle
+            0, 0, this.canvas.width, this.canvas.height // Destination rectangle
+        );
     }
 }
 
