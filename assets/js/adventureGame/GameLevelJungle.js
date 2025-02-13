@@ -69,6 +69,26 @@ class GameLevelJungle {
             { class: Player, data: sprite_data_chungy },
             { class: Npc, data: sprite_data_lumberjack }
         ];
+
+        // Add event listener for handling the lumberjack's quiz
+        window.addEventListener('keydown', this.handleLumberjackQuiz.bind(this));
+    }
+
+    handleLumberjackQuiz(event) {
+        if (event.key === 'e' || event.key === 'u') {
+            const lumberjack = this.objects.find(obj => obj.data.id === 'Lumberjack');
+            if (lumberjack) {
+                const question = lumberjack.data.quiz.questions[0];
+                const answer = prompt(`${lumberjack.data.quiz.title}\n${question}`);
+                if (answer === '1') {
+                    alert("The tree was chopped down!");
+                } else if (answer === '2') {
+                    alert("The tree was not chopped down.");
+                } else {
+                    alert("Invalid response. Please answer with 1 or 2.");
+                }
+            }
+        }
     }
 }
 
