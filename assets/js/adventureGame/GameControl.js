@@ -37,7 +37,7 @@ const createStatsUI = () => {
  * @type {Object}
  * @property {Player} turtle - The player object.
  * @property {Player} fish
- * @property {Player} lumberjack
+ * @property {Player} chungy
  * @property {function} start - Initialize game assets and start the game loop.
  * @property {function} gameLoop - The game loop.
  * @property {function} resize - Resize the canvas and player object when the window is resized.

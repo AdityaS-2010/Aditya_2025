@@ -16,23 +16,23 @@ class GameLevelJungle {
             pixels: { height: 700, width: 400 }
         };
 
-        const sprite_src_chungy = path + "/images/gamify/chungy.png";
-        const CHUNGY_SCALE_FACTOR = 3;
-        const sprite_data_chungy = {
-            id: 'Chungy',
-            greeting: "Hi I am Chungy, I love exploring the jungle and a great adventure!",
-            src: sprite_src_chungy,
-            SCALE_FACTOR: CHUNGY_SCALE_FACTOR,
+        const sprite_src_explorer = path + "/images/gamify/explorer.png";
+        const EXPLORER_SCALE_FACTOR = 3;
+        const sprite_data_explorer = {
+            id: 'Explorer',
+            greeting: "Hi I am Matt, I love exploring the jungle and a great adventure!",
+            src: sprite_src_explorer,
+            SCALE_FACTOR: EXPLORER_SCALE_FACTOR,
             STEP_FACTOR: 1000,
             ANIMATION_RATE: 20,
-            INIT_POSITION: { x: 0, y: height - (height / CHUNGY_SCALE_FACTOR) },
-            pixels: { height: 951, width: 947 },
-            orientation: { rows: 12, columns: 12 },
-            idle: { row: 4, start: 0, columns: 10 },
-            down: { row: 5, start: 6, columns: 11 },
-            left: { row: 7, start: 0, columns: 9 },
-            right: { row: 0, start: 0, columns: 8  },
-            up: { row: 5, start: 0, columns: 5 },
+            INIT_POSITION: { x: 0, y: height - (height / EXPLORER_SCALE_FACTOR) },
+            pixels: { height: 3456, width: 832  },
+            orientation: { rows: 54, columns: 13 },
+            idle: { row: 6, start: 0, columns: 7 },
+            down: { row: 10, start: 0, columns: 8 },
+            left: { row: 9, start: 0, columns: 8 },
+            right: { row: 11, start: 0, columns: 8  },
+            up: { row: 8, start: 0, columns: 8 },
             hitbox: { widthPercentage: 0.45, heightPercentage: 0.2 },
             keypress: { up: 87, left: 65, down: 83, right: 68 } // W, A, S, D
         };
@@ -66,7 +66,7 @@ class GameLevelJungle {
 
         this.objects = [
             { class: Background, data: image_data_jungle },
-            { class: Player, data: sprite_data_chungy },
+            { class: Player, data: sprite_data_explorer },
             { class: Npc, data: sprite_data_lumberjack }
         ];
 
