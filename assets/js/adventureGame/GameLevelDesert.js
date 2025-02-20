@@ -33,7 +33,7 @@ class GameLevelDesert {
         src: sprite_src_chillguy,
         SCALE_FACTOR: CHILLGUY_SCALE_FACTOR,
         STEP_FACTOR: 1000,
-        ANIMATION_RATE: 50,
+        ANIMATION_RATE: 15,
         INIT_POSITION: { x: 0, y: height - (height/CHILLGUY_SCALE_FACTOR) }, 
         pixels: {height: 384, width: 512},
         orientation: {rows: 3, columns: 4 },

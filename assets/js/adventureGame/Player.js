@@ -7,6 +7,9 @@ const STEP_FACTOR = 100; // 1/nth, or N steps up and across the canvas
 const ANIMATION_RATE = 1; // 1/nth of the frame rate
 const INIT_POSITION = { x: 0, y: 0 };
 
+// Define the speed constant
+const SPEED = 6; // character speed
+
 /**
  * Player is a dynamic class that manages the data and events for objects like a player 
  * 
@@ -39,22 +42,23 @@ class Player extends Character {
         this.keysPressed[keyCode] = true; // Track key press state
         switch (keyCode) {
             case this.keypress.up:
-                this.velocity.y -= this.yVelocity;
+                this.velocity.y = -SPEED;
                 this.direction = 'up';
                 break;
             case this.keypress.left:
-                this.velocity.x -= this.xVelocity;
+                this.velocity.x = -SPEED;
                 this.direction = 'left';
                 break;
             case this.keypress.down:
-                this.velocity.y += this.yVelocity;
+                this.velocity.y = SPEED;
                 this.direction = 'down';
                 break;
             case this.keypress.right:
-                this.velocity.x += this.xVelocity;
+                this.velocity.x = SPEED;
                 this.direction = 'right';
                 break;
         }
+        console.log('Key down:', keyCode, 'Velocity:', this.velocity);
     }
 
     /**
@@ -68,18 +72,15 @@ class Player extends Character {
         this.keysPressed[keyCode] = false; // Track key release state
         switch (keyCode) {
             case this.keypress.up:
+            case this.keypress.down:
                 this.velocity.y = 0;
                 break;
             case this.keypress.left:
-                this.velocity.x = 0;
-                break;
-            case this.keypress.down: 
-                this.velocity.y = 0;
-                break;
-            case this.keypress.right: 
+            case this.keypress.right:
                 this.velocity.x = 0;
                 break;
         }
+        console.log('Key up:', keyCode, 'Velocity:', this.velocity);
     }
 
     /**
