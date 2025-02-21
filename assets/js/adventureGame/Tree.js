@@ -1,111 +1,114 @@
+import Character from './Character.js';
 import GameEnv from './GameEnv.js';
-import GameObject from './GameObject.js';
 
-class Tree extends GameObject {
+class Tree extends Character {
     constructor(data) {
-        super();
-        this.state = {
-            ...this.state,
-            animation: 'idle',
-            direction: 'idle',
-            isChopped: false,
-        };
-
-        // Create tree element
-        this.createTreeElement(data);
-
-        // Set initial object properties
-        this.position = data.INIT_POSITION || { x: 0, y: 0 };
-        this.scaleFactor = data.SCALE_FACTOR || 3;
-        this.animationRate = data.ANIMATION_RATE || 20;
-        this.spriteSheet = new Image();
-        this.spriteSheet.src = data.src;
-        this.spriteData = data;
+        super(data);
+        
+        // Basic properties
+        this.isChopped = false;
         this.frameIndex = 0;
         this.frameCounter = 0;
-
-        // Initialize the object's scale based on the game environment
-        this.scale = { width: GameEnv.innerWidth, height: GameEnv.innerHeight };
-
-        // Add this object to the gameLoop
-        GameEnv.gameObjects.push(this);
-
-        // Set the initial size of the object
-        this.resize();
+        this.spriteData = data;
+        
+        // Create two separate canvases - one for each animation
+        this.idleCanvas = this.canvas;
+        this.chopCanvas = document.createElement('canvas');
+        this.chopCtx = this.chopCanvas.getContext('2d');
+        
+        // Load sprite sheet
+        this.spriteSheet = new Image();
+        this.spriteSheet.src = data.src;
+        
+        // Set up canvases
+        this.spriteSheet.onload = () => {
+            const frameWidth = this.spriteData.pixels.width / this.spriteData.orientation.columns;
+            const frameHeight = this.spriteData.pixels.height / this.spriteData.orientation.rows;
+            
+            // Setup idle canvas
+            this.idleCanvas.width = frameWidth;
+            this.idleCanvas.height = frameHeight;
+            this.idleCanvas.style.width = `${this.width}px`;
+            this.idleCanvas.style.height = `${this.height}px`;
+            this.idleCanvas.style.position = 'absolute';
+            this.idleCanvas.style.left = `${this.position.x}px`;
+            this.idleCanvas.style.top = `${GameEnv.top + this.position.y}px`;
+            
+            // Setup chop canvas with same dimensions but initially hidden
+            this.chopCanvas.width = frameWidth;
+            this.chopCanvas.height = frameHeight;
+            this.chopCanvas.style.width = `${this.width}px`;
+            this.chopCanvas.style.height = `${this.height}px`;
+            this.chopCanvas.style.position = 'absolute';
+            this.chopCanvas.style.left = `${this.position.x}px`;
+            this.chopCanvas.style.top = `${GameEnv.top + this.position.y}px`;
+            this.chopCanvas.style.display = 'none';
+            
+            // Add chop canvas to the game container
+            const container = this.idleCanvas.parentNode;
+            if (container) {
+                container.appendChild(this.chopCanvas);
+            }
+            
+            // Add to game objects
+            if (!GameEnv.gameObjects.includes(this)) {
+                GameEnv.gameObjects.push(this);
+            }
+        };
     }
 
-    createTreeElement(data) {
-        this.treeElement = document.createElement("div");
-        this.treeElement.id = data.id || "tree";
-        this.treeElement.style.position = 'absolute';
-        this.treeElement.style.backgroundImage = `url(${data.src})`;
-        this.treeElement.style.backgroundSize = `${data.pixels.width}px ${data.pixels.height}px`;
-        document.getElementById("gameContainer").appendChild(this.treeElement);
+    // Handle tree chopping
+    chopTree() {
+        if (!this.isChopped) {
+            this.isChopped = true;
+            this.frameIndex = 0;
+            this.frameCounter = 0;
+            
+            // Hide idle canvas and show chop canvas
+            this.idleCanvas.style.display = 'none';
+            this.chopCanvas.style.display = 'block';
+        }
     }
 
+    // Draw the tree
     draw() {
-        const frameWidth = this.spriteData.pixels.width / this.spriteData.orientation.columns;
-        const frameHeight = this.spriteData.pixels.height / this.spriteData.orientation.rows;
-        const directionData = this.spriteData[this.state.direction];
-        const frameX = (directionData.start + this.frameIndex) * frameWidth;
-        const frameY = directionData.row * frameHeight;
+        if (this.spriteSheet && this.spriteSheet.complete) {
+            const frameWidth = this.spriteData.pixels.width / this.spriteData.orientation.columns;
+            const frameHeight = this.spriteData.pixels.height / this.spriteData.orientation.rows;
 
-        this.treeElement.style.width = `${frameWidth}px`;
-        this.treeElement.style.height = `${frameHeight}px`;
-        this.treeElement.style.left = `${this.position.x}px`;
-        this.treeElement.style.top = `${GameEnv.top + this.position.y}px`;
-        this.treeElement.style.backgroundPosition = `-${frameX}px -${frameY}px`;
+            // Get animation data
+            const animationData = this.isChopped ? this.spriteData.chop : this.spriteData.idle;
+            
+            // Calculate position in sprite sheet
+            const frameX = (animationData.start + this.frameIndex) * frameWidth;
+            const frameY = animationData.row * frameHeight;
 
-        this.frameCounter++;
-        if (this.frameCounter % this.animationRate === 0) {
-            this.frameIndex++;
-            if (this.frameIndex >= directionData.columns) {
-                this.frameIndex = 0;
-                if (directionData.nextRow !== undefined) {
-                    directionData.row = directionData.nextRow;
+            // Clear and draw on appropriate canvas
+            const currentCanvas = this.isChopped ? this.chopCanvas : this.idleCanvas;
+            const currentCtx = this.isChopped ? this.chopCtx : this.ctx;
+            
+            currentCtx.clearRect(0, 0, currentCanvas.width, currentCanvas.height);
+            currentCtx.drawImage(
+                this.spriteSheet,
+                frameX, frameY, frameWidth, frameHeight,
+                0, 0, currentCanvas.width, currentCanvas.height
+            );
+
+            // Update animation frame based on animation rate from sprite data
+            this.frameCounter++;
+            if (this.frameCounter >= this.spriteData.ANIMATION_RATE) {
+                if (this.isChopped) {
+                    this.frameIndex = Math.min(this.frameIndex + 1, animationData.columns - 1);
+                } else {
+                    this.frameIndex = (this.frameIndex + 1) % animationData.columns;
                 }
+                this.frameCounter = 0;
             }
         }
     }
 
     update() {
         this.draw();
-    }
-
-    chopTree() {
-        if (!this.state.isChopped) {
-            this.state.isChopped = true;
-            this.startChopAnimation();
-        }
-    }
-
-    startChopAnimation() {
-        // Set the direction to chop and reset frame index
-        this.state.direction = 'chop';
-        this.frameIndex = 0;
-        this.frameCounter = 0;
-        this.animationRate = 10; // Slower animation rate
-
-        // Redraw the tree with the chop animation
-        this.update();
-    }
-
-    resize() {
-        const newScale = { width: GameEnv.innerWidth, height: GameEnv.innerHeight };
-        this.position.x = (this.position.x / this.scale.width) * newScale.width;
-        this.position.y = (this.position.y / this.scale.height) * newScale.height;
-        this.scale = newScale;
-        this.size = this.scale.height / this.scaleFactor;
-        this.width = this.size;
-        this.height = this.size;
-    }
-
-    destroy() {
-        const index = GameEnv.gameObjects.indexOf(this);
-        if (index !== -1) {
-            this.treeElement.parentNode.removeChild(this.treeElement);
-            GameEnv.gameObjects.splice(index, 1);
-        }
     }
 }
 
