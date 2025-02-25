@@ -95,19 +95,25 @@ class GameLevelJungle {
 
     handleLumberjackQuiz(event) {
         if (event.key === 'e' || event.key === 'u') {
+            // Find the lumberjack object from the list of objects
             const lumberjack = this.objects.find(obj => obj.data.id === 'Lumberjack');
             // Find the tree instance from GameEnv.gameObjects
             const tree = GameEnv.gameObjects.find(obj => obj instanceof Tree);
             
             if (lumberjack && tree) {
+                // Get the quiz question from the lumberjack's data
                 const question = lumberjack.data.quiz.questions[0];
+                // Prompt the player with the quiz question and get their answer
                 const answer = prompt(`${lumberjack.data.quiz.title}\n${question}`);
                 if (answer === '1') {
+                    // If the player answers "1", chop the tree
                     alert("The tree was chopped down!");
                     tree.chopTree();  // Call chopTree on the actual tree instance
                 } else if (answer === '2') {
+                    // If the player answers "2", do not chop the tree
                     alert("The tree was not chopped down.");
                 } else {
+                    // If the player provides an invalid response, show an error message
                     alert("Invalid response. Please answer with 1 or 2.");
                 }
             }
