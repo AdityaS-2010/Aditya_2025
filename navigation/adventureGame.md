@@ -179,3 +179,13 @@ permalink: /gamify/adventureGame
         updateNpcTracker();
     }
 </script>
+
+<!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="AdityaS-2010/Aditya_2025"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
