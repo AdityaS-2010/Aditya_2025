@@ -66,7 +66,7 @@ class GameLevelJungle {
         };
 
         const sprite_src_tree = path + "/images/gamify/tree1.png";
-        const TREE_SCALE_FACTOR = 1.5;
+        const TREE_SCALE_FACTOR = 2;
         const sprite_data_tree = {
             id: 'Tree',
             greeting: "I am a tree.",
@@ -74,7 +74,7 @@ class GameLevelJungle {
             SCALE_FACTOR: TREE_SCALE_FACTOR,
             STEP_FACTOR: 1000,
             ANIMATION_RATE: 20,
-            INIT_POSITION: { x: width / 2, y: height - (height / TREE_SCALE_FACTOR) },
+            INIT_POSITION: { x: (width / 2) + 50, y: (height - (height / TREE_SCALE_FACTOR)) - 50 },
             pixels: { height: 507, width: 492 },
             orientation: { rows: 2, columns: 3 },
             idle: { row: 0, start: 0, columns: 3 },
